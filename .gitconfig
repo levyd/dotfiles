@@ -1,0 +1,7 @@
+[user]
+	name = Dan Levy
+	email = dan.v.levy@gmail.com
+[core]
+	editor = vim
+[alias]
+    st = status
