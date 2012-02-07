@@ -1,5 +1,7 @@
 set nocompatible
 
+call pathogen#infect()
+
 let mapleader=","
 
 " Files
@@ -11,7 +13,7 @@ set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)
 set ruler
 set showmode
 set wildmenu
-set wildmode=longest:full,full
+set wildmode=longest,full
 "set showtabline=2
 set laststatus=2
 " Disable the bell completely
