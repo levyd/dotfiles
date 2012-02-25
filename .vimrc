@@ -23,6 +23,23 @@ set laststatus=2
 " Disable the bell completely
 set visualbell t_vb=
 
+"Folding
+set foldmethod=manual
+set foldlevel=1
+set foldenable
+
+function AutoFold()
+    set foldmethod=indent
+    set foldlevel=1
+    set foldenable
+endfunction
+
+function ManualFold()
+    set foldmethod=manual
+    set nofoldenable
+endfunction
+
+autocmd BufNewFile,BufRead *.xml,*.html,*.xhtml set foldmethod=indent
 " Colors!
 highlight Folded ctermfg=7 ctermbg=0
 
@@ -81,18 +98,4 @@ map [] k$][%?}<CR>
 nnoremap <leader>ff VaBzf
 " Write file as super-user
 cmap w!! w !sudo tee % >/dev/null
-
-function AutoFold()
-    set foldmethod=indent
-    set foldlevel=1
-    set foldenable
-endfunction
-
-function ManualFold()
-    set foldmethod=manual
-    set nofoldenable
-endfunction
-
-autocmd BufEnter,BufWinEnter,WinEnter,TabEnter *.xml,*.html,*.xhtml call AutoFold()
-autocmd BufLeave,BufWinLeave,WinLeave,TabLeave *.xml,*.html,*.xhtml call ManualFold()
 
