@@ -4,6 +4,10 @@ let mapleader=","
 
 " Files
 set nobackup
+set tags=./tags;${HOME},./TAGS,tags,TAGS
+let tagfiles=substitute(glob("~/.vim/tags/*"), "\n", ",", "g")
+execute "set tags+=" . tagfiles
+"set tags += /home/dan/.vim/tags
 
 " Vim 'chrome'
 set title
@@ -11,11 +15,14 @@ set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)
 set ruler
 set showmode
 set wildmenu
-set wildmode=longest:full,full
+set wildmode=longest,full
 "set showtabline=2
 set laststatus=2
 " Disable the bell completely
 set visualbell t_vb=
+
+" Colors!
+highlight Folded ctermfg=7 ctermbg=0
 
 " Syntax highlighting
 filetype plugin on
@@ -49,7 +56,8 @@ set shiftround
 " Formatting
 set formatoptions=crqn
 autocmd FileType tex,latex,plaintex set formatoptions+=t
-autocmd FileType tex,latex,plaintex set textwidth=80
+set textwidth=80
+"autocmd FileType tex,latex,plaintex set textwidth=80
 
 " Scrolling
 set nowrap
