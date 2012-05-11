@@ -39,9 +39,13 @@ function ManualFold()
     set nofoldenable
 endfunction
 
+autocmd BufNewFile,BufRead * set foldmethod=manual
 autocmd BufNewFile,BufRead *.xml,*.html,*.xhtml set foldmethod=indent
+
 " Colors!
+set t_Co=256
 highlight Folded ctermfg=7 ctermbg=0
+highlight Pmenu ctermbg=238
 
 " Syntax highlighting
 filetype plugin on
@@ -98,4 +102,8 @@ map [] k$][%?}<CR>
 nnoremap <leader>ff VaBzf
 " Write file as super-user
 cmap w!! w !sudo tee % >/dev/null
+
+" Plugins
+"let g:Powerline_symbols='fancy'
+"let g:SuperTabDefaultCompletionType="<c-x><c-o>"
 
