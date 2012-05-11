@@ -26,5 +26,5 @@ zle -A .backward-kill-word vi-backward-kill-word
 bindkey -M vicmd 'K' run-help
 
 # Ctrl-{left,right}
-bindkey '^[[5D' vi-backward-word
-bindkey '^[[5C' vi-forward-word
+bindkey '^[[1;5D' vi-backward-word
+bindkey '^[[1;5C' vi-forward-word
