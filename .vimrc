@@ -23,7 +23,10 @@ set laststatus=2
 " Disable the bell completely
 set visualbell t_vb=
 
-"Folding
+" vimdiff
+set diffopt+=vertical
+
+" Folding
 set foldmethod=manual
 set foldlevel=1
 set foldenable
